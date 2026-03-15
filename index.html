@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NB AI Geological Mapping</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app-container">
+        <!-- Sidebar -->
+        <aside id="sidebar">
+            <div class="sidebar-header">
+                <h1>NB Geo-AI</h1>
+                <p class="subtitle">Proposal: Deep Learning Lithological Contacts</p>
+                <div class="status-badge">Status: Research Proposal</div>
+            </div>
+
+            <div class="section controls-section">
+                <h2>Expected Data Layers</h2>
+                <div class="layer-control">
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="layer-geology" checked>
+                        <span class="slider"></span>
+                    </label>
+                    <span class="layer-name">Current Bedrock Geology (WFS)</span>
+                </div>
+                <div class="layer-control">
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="layer-predictions" checked>
+                        <span class="slider"></span>
+                    </label>
+                    <span class="layer-name">AI Predicted Contacts</span>
+                </div>
+                <div class="layer-control">
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="layer-priority">
+                        <span class="slider priority-slider"></span>
+                    </label>
+                    <span class="layer-name alert-text">Revision Priority Zones</span>
+                </div>
+                <div class="layer-control">
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="layer-uncertainty">
+                        <span class="slider"></span>
+                    </label>
+                    <span class="layer-name">MC Dropout Uncertainty</span>
+                </div>
+            </div>
+
+            <div class="section stats-section">
+                <h2>Target Performance Metrics</h2>
+                <div class="stat-card">
+                    <span class="stat-value highlight-green">> 85%</span>
+                    <span class="stat-label">Target Global Dice Score</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">TBD</span>
+                    <span class="stat-label">Structural Disagreement Area</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value highlight-red">Target: Top 10%</span>
+                    <span class="stat-label">Priority Review Area Identification</span>
+                </div>
+            </div>
+            
+            <div class="section info-section">
+                <h2>Hypothesized Feature Importance</h2>
+                <ul class="feature-list">
+                    <li><span class="feature-bar" style="width: 100%"></span> Th (ppm) - Radiometrics</li>
+                    <li><span class="feature-bar" style="width: 85%"></span> K (%) - Radiometrics</li>
+                    <li><span class="feature-bar" style="width: 70%"></span> TMI 1st VD - Magnetics</li>
+                    <li><span class="feature-bar" style="width: 45%"></span> U (ppm) - Radiometrics</li>
+                    <li><span class="feature-bar" style="width: 30%"></span> Bouguer Gravity</li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Map Area -->
+        <main id="map-area">
+            <div id="map"></div>
+            <!-- Glassmorphism overlay for interactions -->
+            <div id="map-overlay" class="hidden">
+                <div class="overlay-content">
+                    <h3 id="overlay-title">Zone Data</h3>
+                    <p id="overlay-desc">Select a region constraint to analyze features.</p>
+                </div>
+            </div>
+            <!-- Legend -->
+            <div class="map-legend floating-panel">
+                <h4>Legend</h4>
+                <div class="legend-item"><span class="color-box bg-blue"></span> Current Geology</div>
+                <div class="legend-item"><span class="color-box bg-neon"></span> AI Predicted Contact</div>
+                <div class="legend-item"><span class="color-box bg-red"></span> High Disagreement</div>
+                <div class="legend-item"><span class="gradient-box uncertainty-grad"></span> High Uncertainty</div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <!-- Leaflet default heatmap plugin -->
+    <script src="https://leaflet.github.io/Leaflet.heat/dist/leaflet-heat.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

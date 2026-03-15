@@ -1,0 +1,11 @@
+🚀 Exciting new research proposal: **NB Geo-AI - Automated Geological Contact Mapping!** 🌍
+
+I've put together an interactive dashboard mockup to visualize a proposed deep-learning approach for geological mapping in New Brunswick. The goal? To train a U-Net segmentation model on open-access NRCan airborne geophysical data (magnetics, radiometrics, gravity) to automatically predict lithological contacts! 
+
+This proposed workflow aims to rapidly identify "Revision Priority Zones"—areas where AI predictions strongly disagree with existing bedrock geology maps, helping prioritize expensive field-truthing campaigns. 
+
+The dashboard (built with Leaflet & custom CSS) demonstrates what the expected output of this model will look like, featuring simulated predicted contacts and MC Dropout uncertainty heatmaps.
+
+Check out the mockup and let me know your thoughts on applying deep learning to high-resolution geophysics! 
+
+#MachineLearning #Geoscience #DeepLearning #Geophysics #NewBrunswick #AI #GIS #ResearchProposal
