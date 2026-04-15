@@ -129,7 +129,7 @@ Accurate, up-to-date geological contact maps are a prerequisite for exploration 
 
 ## Author
 
-**Dele Falebita, PhD** — Exploration Geoscientist & Data Scientist  
+**Dele Falebita, PhD** — GIT APEGNB & Data Scientist  
 [github.com/erirera](https://github.com/erirera) | Moncton, New Brunswick, Canada
 
 ---
